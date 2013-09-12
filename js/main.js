@@ -3,20 +3,34 @@ $(document).ready(function(){
 
 	$("nav.main").height($(window).height())
 
-    $("nav.main a").click(function(){
-        $("article.main")
-        	.empty()
-        	.append($("<object>")
-        		.attr("type","text/html")
-        		.attr("id", "page")
-        		.attr("height", $(window).height())
-        		.attr("width", $("article.main").width())
-        		.attr("data",$(this).attr("href"))
-        	)
-        return false
-    })
+    window.ClassHomepage = window.ClassHomepage || {}
+    window.ClassHomepage.load_links = function(links_template_data) {
+        console.log("loading links")
+        var source = $("#links-template").html()
+        var template = Handlebars.compile(source)
+        var html = template({'links': links_template_data})
+        $('nav.main').html(html)
 
-    // $("#tt").click(function(){
+
+        // click handlers for links
+        // to load into frame
+        $("nav.main a").click(function(){
+            $("article.main")
+                .empty()
+                .append($("<object>")
+                    .attr("type","text/html")
+                    .attr("id", "page")
+                    .attr("height", $(window).height())
+                    .attr("width", $("article.main").width())
+                    .attr("data",$(this).attr("href"))
+                )
+            return false
+        })
+
+        $('nav.main a').eq(0).trigger("click")
+    }
+
+    // $("#todoist").click(function(){
     // 	$("article.main")
     // 		.empty()
     // 		.append($("<object>")
@@ -38,8 +52,7 @@ $(document).ready(function(){
     // 	return false
     // })
 
-    $("#tt").trigger("click")
-
+    // resize layout handlers
     $(window).resize(function(){
     	if($("article.main > *").size() == 1){
     		$("article.main > *")

@@ -1,76 +1,49 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <title>Class Resources</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
-        <!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-        <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <!-- <script src="js/vendor/jquery-1.10.1.min.js"></script> -->
+    <script src="js/vendor/coffee-script.js"></script>
+    <script src="js/vendor/handlebars.js"></script>
+    <script src="js/data-jess.coffee" type="text/coffeescript"></script>
+    <script src="js/main.js"></script>
 
-    </head>
-    <body>
-        <nav class="main">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+
+    <script id="links-template" type="text/x-handlebars-template">
+      <ul>
+      {{#each links}}
+        <li><a href="{{url}}">{{name}}</a></li>
         <ul>
-            <li><a id="tt" href="https://todoist.com/app?v=163#agenda/(overdue,__7__days,__no__date)">Todoist</a></li>
-            <li><a href="http://web.mit.edu/18.06/www/">18.06</a>
-                <ul>
-                    <li><a href="http://web.mit.edu/18.06/www/psets.shtml">Problem Sets</a></li>
-                    <li><a href="http://web.mit.edu/18.06/www/videos.shtml">Lectures</a></li>
-                    <li><a href="https://learning-modules.mit.edu/portal/index.html?gb=STELLAR:/course/18/fa13/18.06#assignments">Grades</a></li>
-                    <li><a href="https://stellar.mit.edu/S/course/18/fa13/18.06/">Stellar</a></li>
-                </ul>
-            </li>
-            <li><a href="http://stellar.mit.edu/S/course/8/fa13/8.02/index.html">8.02</a>
-                <ul>
-                    <li><a href="http://stellar.mit.edu/S/course/8/fa13/8.02/homework/index.html">Problem Sets</a></li>
-                    <li><a href="http://stellar.mit.edu/S/course/8/fa13/8.02/calendar.html">Calendar</a></li>
-                    <li><a href="http://stellar.mit.edu/S/course/8/fa13/8.02/materials.html">Materials</a></li>
-                </ul>
-            </li>
-            <li><a href="https://sicp-s4.mit.edu/cat-soop/6.01">6.01</a>
-                <ul>
-                    <li><a href="https://piazza.com/class/hi1oejxdw8wdn">Piazza</a></li>
-                    <li><a href="https://sicp-s4.mit.edu/queue/">Help Queue</a></li>
-                </ul>
-            </li>
-            <li><a href="http://stellar.mit.edu/S/course/24/fa13/24.901/index.html">24.901</a>
-                <ul>
-                    <li><a href="https://stellar.mit.edu/S/course/24/fa13/24.901/assignments/">Problem Sets</a></li>
-                    <li><a href="https://stellar.mit.edu/S/course/24/fa13/24.901/materials.html">Materials</a></li>
-                </ul>
-            </li>
-            <li><a href="http://stellar.mit.edu/S/course/24/fa13/24.963/index.html">24.915</a>
-                <ul>
-                    <li><a href="http://stellar.mit.edu/S/course/24/fa13/24.963/homework/index.html">Problem Sets</a></li>
-                    <li><a href="http://stellar.mit.edu/S/course/24/fa13/24.963/materials.html">Materials</a></li>
-                </ul>
-            </li>
-            <li>Speech Group
-                <ul>
-                    <li><a href="https://github.com/spcommgroup/landmarks">Landmarks</a></li>
-                    <li><a href="https://github.com/spcommgroup/landmark">Landmark</a></li>
-                    <li><a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict?in=oh">CMU Dictionary</a></li>
-                    <li><a href="http://web.mit.edu/sapwebss/PS1/time_home.shtml">Time Sheets</a></li>
-                </ul>
-
+        {{#each sublinks}}
+          <li><a href="{{url}}">{{name}}</a></li>
+        {{/each}}
         </ul>
-        <object data="https://m.toggl.com/#time_entries" width="250" height="160"></object>
-        </nav>
-        <article class="main">
-            <object id="page" data="" type="text/html"></object>
-        </article>
+      {{/each}}
+      </ul>
+    </script>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-    </body>
+  </head>
+  <body>
+    <nav class="main">
+      <ul><li>Loading links...</li></ul>
+      <!-- <object data="https://m.toggl.com/#time_entries" width="250" height="160"></object> -->
+    </nav>
+    <article class="main">
+      <object id="page" data="" type="text/html"></object>
+    </article>
+  </body>
 </html>
