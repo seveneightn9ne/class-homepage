@@ -20,13 +20,11 @@ $ -> window.ClassHomepage.load_links [
 ,
   name: "6.042", url: "https://stellar.mit.edu/S/course/6/fa13/6.042/"
   sublinks: [
-    name: "Announcements", url: "https://stellar.mit.edu/S/course/6/fa13/6.042/"
+    name: "Announcements", url: "http://courses.csail.mit.edu/6.042/fall13/"
   ,
-    name: "Calendar", url: "https://www.google.com/calendar/embed?src=eiielbenhp7ck7jmgur9v3ik4o%40group.calendar.google.com&ctz=America/New_York"
+    name: "Calendar", url: "http://courses.csail.mit.edu/6.042/fall13/pub-calendar.shtml"
   ,
-    name: "Materials", url: "https://stellar.mit.edu/S/course/6/fa13/6.042/materials.html"
-  ,
-    name: "Homework Submission", url: "https://stellar.mit.edu/S/course/6/fa13/6.042/homework/index.html"
+    name: "Materials", url: "http://courses.csail.mit.edu/6.042/fall13/class-material.shtml"
   ,
     name: "Online Tutor", url: "https://mitx.mit.edu/courses/MITx/6.042r/2013_Fall/courseware/"
   ,
@@ -52,9 +50,7 @@ $ -> window.ClassHomepage.load_links [
   sublinks: [
     name: "Stellar (Announcements)", url: "http://stellar.mit.edu/S/course/24/fa13/24.900/index.html"
   ,
-    name: "Materials", url: "http://stellar.mit.edu/S/course/24/fa13/24.900/materials.html"
-  ,
-    name: "Syllabus", url: "http://stellar.mit.edu/S/course/24/fa13/24.900/courseMaterial/topics/topic1/syllabus/24.900-fa13-Syllabus/24.900-fa13-Syllabus.v3.pdf"
+    name: "Syllabus", url: "http://stellar.mit.edu/S/course/24/fa13/24.900/courseMaterial/topics/topic1/syllabus/24.900-fa13-Syllabus/24.900-fa13-Syllabus-2x1.pdf"
   ,
     name: "Homework", url: "http://stellar.mit.edu/S/course/24/fa13/24.900/homework/index.html"
   ]
